@@ -1,66 +1,78 @@
-import { Text, View} from "react-native"
+import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity} from "react-native"
 import {useState} from 'react';
 
 export default function Cadastro(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    function SignIn(){
-        if (username == '1' && password == '2'){
+    function SignIn(navigation){
+      if (username == '1' && password == '2'){
         navigation.navigate("Home")
         setPassword('');
         setUsername('');
-        }
-        else {
+      }
+      else {
         alert('Dados Inválidos!')
-        }
+      }
     }
+  
+  
+      return(
+          <View style={styles.container}>
+              <Text style={styles.text}>App Doações</Text>
+              <Text style={styles.text2}>Cadastro</Text>
+              <Text style={styles.text3}>Insira seu login para Cadastrar-se</Text>
+              <TextInput
+              style= {styles.input}
+              placeholder= 'Login'
+              placeholderTextColor={'#808080'}
+              value={username}
+              onChangeText = {setUsername}
+              />
+              <TextInput
+              style= {styles.input2}
+              placeholder= 'Senha'
+              placeholderTextColor={'#808080'}
+              value={password}
+              onChangeText = {setPassword}
+              />
+              <Text style={styles.text3}>Entrando você concorda com os Termos de Serviço da fundação Doações S.A.</Text>
+              <TouchableOpacity onPress={SignIn} style={styles.button}>
+                  <Text style={styles.txtbutton}>Continuar com o Email</Text>
+              </TouchableOpacity>
+          </View>
+      )
+  }
 
 
-    return(
-        <View style={styles.container}>
-            <Text style={styles.text}>Login!!</Text>
-            <Image style={styles.logo} source={{uri:'https://media1.tenor.com/m/ZuXnTDxIbjQAAAAC/shocked-shocked-cat.gif'}}/>
-            <TextInput
-            style= {styles.input}
-            placeholder= 'Teu Login'
-            placeholderTextColor={'#808080'}
-            value={username}
-            onChangeText = {setUsername}
-            />
-            <TextInput
-            style= {styles.input}
-            placeholder= 'Senha'
-            placeholderTextColor={'#808080'}
-            value={password}
-            onChangeText = {setPassword}
-            />
-            <TouchableOpacity onPress={SignIn} style={styles.button}>
-                <Text style={styles.txtbutton}>Botão Brabo!!</Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
-
-
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#6959CD',
+        backgroundColor: '#FFF',
         alignItems: 'center',
         justifyContent: 'space-around',
       },
       text: {
         textAlign: 'center',
-        fontStyle: 'italic',
+        fontWeight: 'bold',
         fontSize: 30,
-        color: '#09427d',
+        color: '#000000	'
+      },
+      text2: {
+        textAlign: 'center',
+        fontSize: 22,
+        color: '#000000	'
+      },
+      text3: {
+        textAlign: 'center',
+        fontSize: 15,
+        color: '#000000	'
       },
       button: {
         shadowRadius: 20,
         borderRadius: 10,
         backgroundColor: '#363636',
-        width: 170,
+        width: 300,
         height: 35,
       },
       txtbutton: {
@@ -70,11 +82,25 @@ const styles = StyleSheet.create({
         textAlign: 'center',
       },
       input:{
-        backgroundColor: '#363636',
+        backgroundColor: '#FFF',
+        borderColor: '#000000',
+        borderWidth: 0.8,
         shadowRadius: 20,
-        borderRadius: 10,
+        borderRadius: 8,
         padding: 10,
+        width: 300,
         height: 37,
+      },
+      input2:{
+        backgroundColor: '#FFF',
+        borderColor: '#000000',
+        borderWidth: 0.8,
+        shadowRadius: 20,
+        borderRadius: 8,
+        padding: 10,
+        width: 300,
+        height: 37,
+
       },
       logo: {
         marginTop: 50,
