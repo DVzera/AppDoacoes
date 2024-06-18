@@ -5,6 +5,10 @@ export default function Login({navigation}){
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  function Cadastrar(){
+    navigation.navigate("Cadastro")
+  }
+
   function SignIn(){
     if (username == '1' && password == '2'){
       navigation.navigate("Home")
@@ -38,6 +42,9 @@ export default function Login({navigation}){
             />
             <TouchableOpacity onPress={SignIn} style={styles.button}>
                 <Text style={styles.txtbutton}>Continuar com o Email</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={Cadastrar} style={styles.button}>
+                <Text style={styles.txtbutton}>Cadastrar-se</Text>
             </TouchableOpacity>
         </View>
     )

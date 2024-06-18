@@ -5,7 +5,7 @@ export default function Cadastro(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    function SignIn(){
+    function SignIn(navigation){
       if (username == '1' && password == '2'){
         navigation.navigate("Home")
         setPassword('');

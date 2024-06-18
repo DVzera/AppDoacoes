@@ -14,7 +14,7 @@ function HomeTabs(){
     <Tab.Navigator>
       <Tab.Screen name={"Home"} component={Home}/>
       <Tab.Screen name={"Feed"} component={Feed}/>
-      <Tab.Screen name={"Cadastro"} component={Cadastro}/>
+      
     </Tab.Navigator>
   );
 }
@@ -26,6 +26,7 @@ export default function App(){
       <Stack.Navigator>
       <Stack.Screen name={"Login"} component={Login}/>
       <Stack.Screen name={"Home"} component={HomeTabs}/>
+      <Stack.Screen name={"Cadastro"} component={Cadastro}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
