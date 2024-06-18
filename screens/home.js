@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image, ScrollView, TouchableOpacity} from "react-native"
+import {View, Text, Image, ScrollView, TouchableOpacity, StyleSheet} from "react-native";
 import {useState} from 'react';
 
 export default function Home(){
@@ -19,11 +19,11 @@ export default function Home(){
             <ScrollView style={styles.scrollView}>
               <Text style={styles.text}> {count} </Text>
               <TouchableOpacity onPress = {counter}>
-                <text>Contar</text>
+                <Text>Contar</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress = {descounter}>
-                <text>Descontar</text>
+                <Text>Descontar</Text>
               </TouchableOpacity>
           {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

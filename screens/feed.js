@@ -21,7 +21,7 @@ export default function Feed(){
             onChangeText = {numero}
             />
             <TouchableOpacity onPress = {numeroColocar}>
-                <text>Numero dobrado</text>
+                <Text>Numero dobrado</Text>
               </TouchableOpacity>
             <Text> {b} </Text>
         </View>
