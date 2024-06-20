@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: 16,
         padding: 15,
-        textAlign: 'center',
+        textAlign: 'left',
         color: '#000',
     },
     navButton: {
