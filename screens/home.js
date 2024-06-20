@@ -1,92 +1,85 @@
-import {View, Text, Image, ScrollView, TouchableOpacity, StyleSheet} from "react-native";
-import {useState} from 'react';
+import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from "react-native";
+import { useState } from 'react';
 
-export default function Home(){
-  const [count, setCount] = useState(0);
-    
-  function counter(){
-    setCount(count+100000)
-  }
-  function descounter(){
-    setCount(count-1)
-  }
-
-    return(
-        <View style={styles.container}>
-            <Text style={styles.text}>Casa Legal</Text>
-            <Image style={styles.logo} source={{uri:'https://media1.tenor.com/m/ZuXnTDxIbjQAAAAC/shocked-shocked-cat.gif'}}/>
+export default function Home() {
+    return (
+        <ScrollView style={styles.container}>
+            <View style={styles.topBar}>
+                <Text style={styles.title}>Doações</Text>
+            </View>
             
-            <ScrollView style={styles.scrollView}>
-              <Text style={styles.text}> {count} </Text>
-              <TouchableOpacity onPress = {counter}>
-                <Text>Contar</Text>
-              </TouchableOpacity>
+            <View style={styles.userContainer}>
+                <Image style={styles.user} source={{uri:'https://media.istockphoto.com/id/1135687337/pt/vetorial/flag-of-rio-grande-do-sul-on-button.jpg?s=612x612&w=0&k=20&c=oJAtm_DpEiQmEE60JdLDREZ7Cu00T5itMDn2E9PSA_Q='}}/>  
+                <Text style={styles.text}>FARS</Text>
+            </View>
+            
+            <Image style={styles.logo} source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTi0Pn1RfIL5hD2NIuRFgpRIrHf7wClTbrXw&s'}}/>
+            
+            <Text style={styles.caption}>Ajude os impactados pelas inundações no Rio Grande do Sul!</Text>
 
-              <TouchableOpacity onPress = {descounter}>
-                <Text>Descontar</Text>
-              </TouchableOpacity>
-          {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. */}
-            </ScrollView>
-        </View>
+            <View style={styles.userContainer}>
+                <Image style={styles.user} source={{uri:'https://static.vecteezy.com/ti/vetor-gratis/p1/7113275-avatar-homem-rosto-silhueta-usuario-sinal-pessoa-perfil-imagem-masculino-icone-em-circulo-redondo-preto-cor-ilustracao-imagem-contorno-contorno-linha-estilo-fino-vetor.jpg'}}/>  
+                <Text style={styles.text}>Asilo São Cristóvão</Text>
+            </View>
+            
+            <Text style={styles.caption}>Precisamos de fraldas geriatricas e roupas para a terceira idade no Asilo São Cristóvão. Por favor doem o Possível!</Text>
+
+
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#6959CD',
+        backgroundColor: '#FFF',
+    },
+    topBar: {
+        height: 50,
+        backgroundColor: '#FFF',
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'space-around',
-      },
-      text: {
-        textAlign: 'center',
-        fontStyle: 'italic',
-        fontSize: 30,
-        color: '#09427d',
-      },
-      textscroll: {
-        textAlign: 'center',
-        fontStyle: 'italic',
-        padding: 5,
-        fontSize: 25,
-        color: '#09427d',
-      },
-      scrollView: {
-        backgroundColor: 'pink',
-        marginHorizontal: 20,
-      },
-      button: {
-        shadowRadius: 20,
-        borderRadius: 10,
-        backgroundColor: '#363636',
-        width: 170,
-        height: 35,
-      },
-      txtbutton: {
-        color: '#fff',
+        borderBottomWidth: 1,
+        borderBottomColor: '#E5E5E5',
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    userContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#E5E5E5',
+    },
+    text: {
+        marginLeft: 10,
         fontStyle: 'italic',
         fontSize: 20,
-        textAlign: 'center',
-      },
-      input:{
-        backgroundColor: '#363636',
-        shadowRadius: 20,
-        borderRadius: 10,
-        padding: 10,
-        height: 37,
-      },
-      logo: {
-        marginTop: 50,
-        width: 200,
-        height: 200,
+        color: '#000',
+    },
+    logo: {
+        width: '100%',
+        height: 400,
         alignSelf: "center",
-        borderRadius: 10,
-        overlayColor: '#6959CD',
-      },
+    },
+    caption: {
+        fontSize: 16,
+        padding: 15,
+        textAlign: 'center',
+        color: '#000',
+    },
+    navButton: {
+        alignItems: 'center',
+    },
+    navButtonText: {
+        fontSize: 16,
+        color: '#000',
+    },
+    user: {
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+    },
 });
