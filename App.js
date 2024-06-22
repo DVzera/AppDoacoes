@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './Screens/Login';
-import Home from './Screens/Home';
-import Feed from './Screens/Feed';
-import Cadastro from './Screens/Cadastro';
+import Login from './src/Screens/Login';
+import Home from './src/Screens/Home';
+import Feed from './src/Screens/Feed';
+import Cadastro from './src/Screens/Cadastro';
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { createStackNavigator } from "@react-navigation/stack";
