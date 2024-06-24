@@ -5,7 +5,7 @@ import Mensagem from './src/Screens/Mensagem';
 import Cadastro from './src/Screens/Cadastro';
 import Perfil from './src/Screens/Perfil';
 import Home from './src/Screens/Home';
-import Feed from './src/Screens/Feed';
+import Postar from './src/Screens/Postar';
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { createStackNavigator } from "@react-navigation/stack";
@@ -58,7 +58,7 @@ export default function App(){
           options={{ headerShown: false }} 
         />
         <Stack.Screen name={"Cadastro"} component={Cadastro}/>
-        <Stack.Screen name="Feed" component={Feed} />
+        <Stack.Screen name="Postar" component={Postar} />
       </Stack.Navigator>
     </NavigationContainer>
   );

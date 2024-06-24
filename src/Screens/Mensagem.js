@@ -13,7 +13,7 @@ export default function Mesangem(){
 
     return(
         <View>
-            <Text>Numero</Text>
+            <Text>Numer</Text>
             <TextInput
             placeholder= 'Digite o numero que deseja dobrar:'
             placeholderTextColor={'#808080'}

@@ -3,7 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, TextInput, StyleSheet, Alert } 
 import { collection, addDoc, getDocs } from 'firebase/firestore'; 
 import { database } from '../config/firebaseconfig'; 
 
-export default function Feed() {
+export default function Postar() {
   // Estado para armazenar a lista de postagens
   const [posts, setPosts] = useState([]);
   // Estado para armazenar os dados da nova postagem

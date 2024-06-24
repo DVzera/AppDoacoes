@@ -42,7 +42,7 @@ export default function Home(props) {
       {/* Botão de adicionar postagem */}
       <TouchableOpacity
         onPress={() => {
-          props.navigation.navigate('Feed');
+          props.navigation.navigate('Postar');
         }}
         style={styles.botaoAdicionar}
       >
