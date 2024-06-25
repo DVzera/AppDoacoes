@@ -9,6 +9,7 @@ export default function Postar() {
   // Estado para armazenar os dados da nova postagem
   const [newPost, setNewPost] = useState({
     nome: '',
+    imagem: '',
     endereco: '',
     legenda: '',
     telefone: '',
@@ -27,14 +28,14 @@ export default function Postar() {
   // Função para adicionar uma nova postagem
   const addPost = async () => {
     console.log('Adicionando post:', newPost); // Log para exibir os dados da nova postagem
-    const { nome, endereco, legenda, telefone } = newPost; // Desestruturação dos dados da nova postagem
+    const { nome, imagem, endereco, legenda, telefone } = newPost; // Desestruturação dos dados da nova postagem
     // Verifica se algum campo está vazio
-    if (!nome || !endereco || !legenda || !telefone) {
+    if (!nome || !imagem || !endereco || !legenda || !telefone) {
       console.error('Algum dos campos está vazio');
       return;
     }
     // Verifica se algum campo está vazio depois de remover espaços em branco
-    if (nome.trim() === '' || endereco.trim() === '' || legenda.trim() === '' || telefone.trim() === '') {
+    if (nome.trim() === '' || imagem.trim() === '' || endereco.trim() === '' || legenda.trim() === '' || telefone.trim() === '') {
       console.error('Algum dos campos está vazio depois de remover espaços em branco');
       return;
     }
@@ -45,7 +46,7 @@ export default function Postar() {
       const updatedPosts = [...posts, { id: newPostRef.id, ...newPost }];
       setPosts(updatedPosts); // Atualiza o estado com as postagens atualizadas
       // Limpa os campos da nova postagem
-      setNewPost({ nome: '', endereco: '', legenda: '', telefone: '' });
+      setNewPost({ nome: '', imagem: '', endereco: '', legenda: '', telefone: '' });
       console.log('Post adicionado com sucesso:', newPostRef.id); // Log para indicar que a postagem foi adicionada com sucesso
       // Exibe um alerta de sucesso
       Alert.alert('Sucesso', 'Postagem adicionada com sucesso');
@@ -64,6 +65,12 @@ export default function Postar() {
           placeholder="Nome"
           value={newPost.nome}
           onChangeText={text => setNewPost({ ...newPost, nome: text })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="imagem(url)"
+          value={newPost.imagem}
+          onChangeText={text => setNewPost({ ...newPost, imagem: text })}
         />
         <TextInput
           style={styles.input}

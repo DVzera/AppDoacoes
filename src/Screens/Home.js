@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { getDocs, collection, onSnapshot } from 'firebase/firestore';
 import { database } from '../config/firebaseconfig';
 import MaterialIcon from 'react-native-vector-icons/AntDesign';
@@ -32,6 +32,7 @@ export default function Home(props) {
               <Text style={styles.texto}>{post.nome}</Text>
             </View>
             {/* Legenda, endereço e telefone da postagem */}
+            <Image style={styles.imagem} source={{uri: post.imagem}} />
             <Text style={styles.legenda}>{post.legenda}</Text>
             <Text style={styles.legenda}>Endereço: {post.endereco}</Text>
             <Text style={styles.legenda}>Telefone: {post.telefone}</Text>
@@ -117,4 +118,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  imagem: {
+    width: 100,
+    height: 100,
+  }
 });
